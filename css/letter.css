@@ -1,0 +1,86 @@
+/* Animated gradient background */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+ background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #89f7fe, #66a6ff);
+  background-size: 400% 400%;
+  animation: moveGradient 12s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Letter box */
+.letter-container {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+}
+
+.letter-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff4f81;
+}
+
+.letter-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.signature {
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: #ff4f81;
+}
+
+/* Back to home button */
+.back-home {
+  margin-top: 1.5rem;
+  text-decoration: none;
+  background: #ff4f81;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+.back-home:hover {
+  background: #e33d6f;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .letter-container {
+    padding: 1.2rem;
+    max-width: 90%;
+  }
+  .letter-container h1 {
+    font-size: 1.5rem;
+  }
+  .letter-container p {
+    font-size: 1rem;
+  }
+}
