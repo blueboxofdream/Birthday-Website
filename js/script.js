@@ -51,15 +51,16 @@ window.onload = function () {
 
   const bgMusic = document.getElementById("bgMusic");
 
-// iPhone requires user interaction once to allow audio
+// iPhone initially requires audio to start muted
 function enableAudio() {
+  bgMusic.muted = false;
   bgMusic.play().catch(() => {});
   document.removeEventListener("touchstart", enableAudio);
   document.removeEventListener("click", enableAudio);
 }
 
-// If autoplay is blocked → wait for any touch or click
-document.addEventListener("touchstart", enableAudio);
-document.addEventListener("click", enableAudio);
+document.addEventListener("touchstart", enableAudio, { once: true });
+document.addEventListener("click", enableAudio, { once: true });
+
   draw();
 };
