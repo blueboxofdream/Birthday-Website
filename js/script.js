@@ -49,18 +49,18 @@ window.onload = function () {
     });
   }
 
-  const bgMusic = document.getElementById("bgMusic");
+//   const bgMusic = document.getElementById("bgMusic");
 
-// iPhone initially requires audio to start muted
-function enableAudio() {
-  bgMusic.muted = false;
-  bgMusic.play().catch(() => {});
-  document.removeEventListener("touchstart", enableAudio);
-  document.removeEventListener("click", enableAudio);
-}
+// // iPhone initially requires audio to start muted
+// function enableAudio() {
+//   bgMusic.muted = false;
+//   bgMusic.play().catch(() => {});
+//   document.removeEventListener("touchstart", enableAudio);
+//   document.removeEventListener("click", enableAudio);
+// }
 
-document.addEventListener("touchstart", enableAudio, { once: true });
-document.addEventListener("click", enableAudio, { once: true });
+// document.addEventListener("touchstart", enableAudio, { once: true });
+// document.addEventListener("click", enableAudio, { once: true });
 
   draw();
 };
