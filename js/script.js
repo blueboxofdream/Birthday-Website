@@ -49,5 +49,17 @@ window.onload = function () {
     });
   }
 
+  const bgMusic = document.getElementById("bgMusic");
+
+// iPhone requires user interaction once to allow audio
+function enableAudio() {
+  bgMusic.play().catch(() => {});
+  document.removeEventListener("touchstart", enableAudio);
+  document.removeEventListener("click", enableAudio);
+}
+
+// If autoplay is blocked → wait for any touch or click
+document.addEventListener("touchstart", enableAudio);
+document.addEventListener("click", enableAudio);
   draw();
 };
